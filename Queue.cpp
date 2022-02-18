@@ -39,8 +39,9 @@ void Queue::display(){
   if(front!=NULL){
     temp=front;
     while(temp!=NULL){
-      cout << temp->data << endl;
+      cout << temp->data;
       temp=temp->next;
     }
+    cout << "\n";
   }
 }

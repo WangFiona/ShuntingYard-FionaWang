@@ -17,6 +17,7 @@ public:
   void pop();
   char peek();
   void display();
+  bool isEmpty();
 };
 
 #endif

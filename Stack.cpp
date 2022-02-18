@@ -41,8 +41,17 @@ void Stack::display(){
   if(top!=NULL){
     temp=top;
     while(temp!=NULL){
-      cout << temp->data << endl;
+      cout << temp->data;
       temp=temp->next;
     }
+    cout << endl;
+  }
+}
+
+bool Stack::isEmpty(){
+  if(top==NULL){
+    return true;
+  } else{
+    return false;
   }
 }
