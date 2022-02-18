@@ -17,5 +17,6 @@ class Queue{
   void enqueue(char newData);
   void dequeue();
   void display();
+  char* returnPostfix();
 };
 #endif

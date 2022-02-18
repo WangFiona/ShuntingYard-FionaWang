@@ -8,6 +8,7 @@
 using namespace std;
 
 class TreeStack{
+public:
   BStackNode* top;
 
   TreeStack();

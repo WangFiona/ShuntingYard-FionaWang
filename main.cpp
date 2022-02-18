@@ -15,11 +15,11 @@ int main(){
   Stack* stack = new Stack();
   Queue* queue = new Queue();
   char input[30];
-  char expression[20];
+  //char expression[20];
   char notation[15];
   int prev=0;
   int now=0;
-
+  
   cout << "Please enter a mathematical expression using infix notation (include a space between each token):" << endl;
   cin.get(input, 30);
   cin.get();
@@ -27,12 +27,6 @@ int main(){
   cout << "What notation would you like to translate to (infix, prefix, or postfix)?" << endl;
   cin.get(notation, 15);
   cin.get();
-
-  /*int x=0;
-  for(int i=0; i<strlen(input); i=i+2){
-    expression[x]=input[i];
-    x++
-    }*/
 
   for(int i=0; i<strlen(input); i=i+2){
     if(input[i]>='0' && input[i]<='9'){
@@ -73,6 +67,30 @@ int main(){
   }
 
   queue->display();
+
+
+  //Creating the binary expression tree
+  TreeStack* treeStack = new TreeStack();
+  TreeNode* root = new TreeNode('\0');
+  char* postfix = queue->returnPostfix();
+  
+  for(int i=0; i<strlen(postfix); i++){
+    if(postfix[i]<='0' && postfix[i]>='9'){
+      treeStack->push(new TreeNode(postfix[i]));
+    }
+    else {
+      TreeNode* right = treeStack->peek();
+      treeStack->pop();
+
+      TreeNode* left = treeStack->peek();
+      treeStack->pop();
+
+      TreeNode* node = new TreeNode(postfix[i], left, right);
+
+      treeStack->push(node);
+    }
+  }
+
   
   return 0;
 }

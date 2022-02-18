@@ -45,3 +45,18 @@ void Queue::display(){
     cout << "\n";
   }
 }
+
+char* Queue::returnPostfix(){
+  char* postfix = new char[40];
+  Node* temp;
+  if(front!=NULL){
+    temp=front;
+    int x=0;
+    while(temp!=NULL){
+      postfix[x]=temp->data;
+      x++;
+      temp=temp->next;
+    }
+  }
+  return postfix;
+}
