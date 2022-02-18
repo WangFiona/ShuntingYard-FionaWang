@@ -3,12 +3,12 @@
 #include <iostream>
 #include <cstring>
 #include "Node.h"
+#include "TreeNode.h"
 
 using namespace std;
 
 class Stack{
 public:
-  char data;
   Node* top;
 
   Stack();

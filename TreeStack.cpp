@@ -1,25 +1,25 @@
 #include <iostream>
 #include <cstring>
-#include "Stack.h"
-#include "Node.h"
+#include "TreeStack.h"
+#include "BStackNode.h"
 
-Stack::Stack(){
+TreeStack::TreeStack(){
   top=NULL;
 }
 
-Stack::~Stack(){
+TreeStack::~TreeStack(){
   top=NULL;
 }
 
-void Stack::push(char newData){
-  Node* temp = new Node('\0');
+void TreeStack::push(TreeNode* newData){
+  BStackNode* temp = new BStackNode(NULL);
   temp->data=newData;
   temp->next=top;
   top=temp;
 }
 
-void Stack::pop(){
-  Node* temp;
+void TreeStack::pop(){
+  BStackNode* temp;
   if(top!=NULL){
     temp=top;
     top=top->next;
@@ -27,28 +27,28 @@ void Stack::pop(){
   }
 }
 
-char Stack::peek(){
+TreeNode* TreeStack::peek(){
   if(top!=NULL){
     return top->data;
   }
   else{
-    return '\0';
+    return NULL;
   }
 }
 
-void Stack::display(){
-  Node* temp;
+void TreeStack::display(){
+  BStackNode* temp;
   if(top!=NULL){
     temp=top;
     while(temp!=NULL){
-      cout << temp->data;
+      cout << temp->data->data;
       temp=temp->next;
     }
     cout << endl;
   }
 }
 
-bool Stack::isEmpty(){
+bool TreeStack::isEmpty(){
   if(top==NULL){
     return true;
   } else{

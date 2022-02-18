@@ -3,6 +3,9 @@
 #include "Node.h"
 #include "Stack.h"
 #include "Queue.h"
+#include "TreeNode.h"
+#include "BStackNode.h"
+#include "TreeStack.h"
 
 using namespace std;
 
@@ -70,28 +73,6 @@ int main(){
   }
 
   queue->display();
-  
-  /*stack->push('a');
-  stack->push('b');
-  stack->push('c');
-  stack->display();
-  cout << endl;
-
-  stack->pop();
-  stack->display();
-  cout << endl;
-  cout << stack->peek() << endl;
-  cout << endl;
-  stack->display();
-  cout << endl;
-  
-  queue->enqueue('a');
-  queue->enqueue('b');
-  queue->enqueue('c');
-  queue->display();
-  cout << endl;
-  queue->dequeue();
-  queue->display();*/
   
   return 0;
 }
