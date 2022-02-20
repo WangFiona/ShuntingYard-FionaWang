@@ -49,6 +49,7 @@ char Stack::peek(){
 
 //Function for displaying the entire stack
 //Referenced from GeeksforGeeks
+//https://www.geeksforgeeks.org/implement-a-stack-using-singly-linked-list/
 void Stack::display(){
   Node* temp;
   if(top!=NULL){

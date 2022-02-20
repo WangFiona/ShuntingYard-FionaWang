@@ -21,6 +21,7 @@ Queue::~Queue(){
 
 //Function for adding into the queue
 //Referenced from GeeksforGeeks
+//https://www.geeksforgeeks.org/queue-linked-list-implementation/?ref=lbp
 void Queue::enqueue(char newData){
   Node* temp = new Node('\0');
   temp->data = newData;
@@ -35,6 +36,7 @@ void Queue::enqueue(char newData){
 
 //Function for deleting characters in the queue
 //Referenced from GeeksforGeeks
+//https://www.geeksforgeeks.org/queue-linked-list-implementation/?ref=lbp
 void Queue::dequeue(){
   if(front!=NULL){
     Node* temp = front;
