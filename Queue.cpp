@@ -20,6 +20,7 @@ Queue::~Queue(){
 }
 
 //Function for adding into the queue
+//Referenced from GeeksforGeeks
 void Queue::enqueue(char newData){
   Node* temp = new Node('\0');
   temp->data = newData;
@@ -33,6 +34,7 @@ void Queue::enqueue(char newData){
 }
 
 //Function for deleting characters in the queue
+//Referenced from GeeksforGeeks
 void Queue::dequeue(){
   if(front!=NULL){
     Node* temp = front;

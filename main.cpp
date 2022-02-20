@@ -105,6 +105,7 @@ int main(){
   char* postfixChar = queue->returnPostfix();
 
   //Go through the postfix expression
+  //Referenced from Techie Delight
   for(int i=0; i<strlen(postfixChar); i++){
     if(isOperator(postfixChar[i])==false){ //For numbers and variables
       treeStack->push(new TreeNode(postfixChar[i]));

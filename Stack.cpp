@@ -48,6 +48,7 @@ char Stack::peek(){
 }
 
 //Function for displaying the entire stack
+//Referenced from GeeksforGeeks
 void Stack::display(){
   Node* temp;
   if(top!=NULL){
