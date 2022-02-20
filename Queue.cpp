@@ -3,14 +3,23 @@
 #include "Queue.h"
 #include "Node.h"
 
+/*
+ * Author: Fiona Wang
+ * Date: February 20, 2022
+ * This file is the implentation for the queue class
+ */
+
+//Constructor
 Queue::Queue(){
   front=rear=NULL;
 }
 
+//Destructor
 Queue::~Queue(){
   front=rear=NULL;
 }
 
+//Function for adding into the queue
 void Queue::enqueue(char newData){
   Node* temp = new Node('\0');
   temp->data = newData;
@@ -23,6 +32,7 @@ void Queue::enqueue(char newData){
   rear = temp;
 }
 
+//Function for deleting characters in the queue
 void Queue::dequeue(){
   if(front!=NULL){
     Node* temp = front;
@@ -34,6 +44,7 @@ void Queue::dequeue(){
   }
 }
 
+//Function for displaying the entire queue
 void Queue::display(){
   Node* temp;
   if(front!=NULL){
@@ -46,6 +57,7 @@ void Queue::display(){
   }
 }
 
+//Function for returning the entire postfix
 char* Queue::returnPostfix(){
   char* postfix = new char[40];
   Node* temp;

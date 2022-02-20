@@ -3,14 +3,23 @@
 #include "Stack.h"
 #include "Node.h"
 
+/*
+ * Author: Fiona Wang
+ * Date: February 20, 2022
+ * This file is the implementation of the stack class
+ */
+
+//Constructor
 Stack::Stack(){
   top=NULL;
 }
 
+//Destructor
 Stack::~Stack(){
   top=NULL;
 }
 
+//Function for pushing into the stack
 void Stack::push(char newData){
   Node* temp = new Node('\0');
   temp->data=newData;
@@ -18,6 +27,7 @@ void Stack::push(char newData){
   top=temp;
 }
 
+//Function for deleting the top variable in the stack
 void Stack::pop(){
   Node* temp;
   if(top!=NULL){
@@ -27,6 +37,7 @@ void Stack::pop(){
   }
 }
 
+//Function for looking at the top value
 char Stack::peek(){
   if(top!=NULL){
     return top->data;
@@ -36,6 +47,7 @@ char Stack::peek(){
   }
 }
 
+//Function for displaying the entire stack
 void Stack::display(){
   Node* temp;
   if(top!=NULL){
@@ -48,6 +60,7 @@ void Stack::display(){
   }
 }
 
+//Function for checking if the stack is empty
 bool Stack::isEmpty(){
   if(top==NULL){
     return true;

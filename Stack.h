@@ -7,10 +7,18 @@
 
 using namespace std;
 
+/*
+ * Author: Fiona Wang
+ * Date: February 20, 2022
+ * This file is the interface for the stack class
+ */
+
 class Stack{
 public:
+  //Initializing variables
   Node* top;
 
+  //Initiazling functions
   Stack();
   ~Stack();
   void push(char newData);

@@ -3,14 +3,23 @@
 #include "TreeStack.h"
 #include "BStackNode.h"
 
+/*
+ * Author: Fiona Wang
+ * Date: February 20, 2022
+ * This file is the implementation of the tree stack class
+ */
+
+//Constructor
 TreeStack::TreeStack(){
   top=NULL;
 }
 
+//Destructor
 TreeStack::~TreeStack(){
   top=NULL;
 }
 
+//Function for pushing into the stack
 void TreeStack::push(TreeNode* newData){
   BStackNode* temp = new BStackNode(NULL);
   temp->data=newData;
@@ -18,6 +27,7 @@ void TreeStack::push(TreeNode* newData){
   top=temp;
 }
 
+//Function for deleting the top value
 void TreeStack::pop(){
   BStackNode* temp;
   if(top!=NULL){
@@ -27,6 +37,7 @@ void TreeStack::pop(){
   }
 }
 
+//Function for looking at the top value
 TreeNode* TreeStack::peek(){
   if(top!=NULL){
     return top->data;
@@ -36,6 +47,7 @@ TreeNode* TreeStack::peek(){
   }
 }
 
+//Function for displaying the entire stack
 void TreeStack::display(){
   BStackNode* temp;
   if(top!=NULL){
@@ -48,6 +60,7 @@ void TreeStack::display(){
   }
 }
 
+//Function for checking if the stack is empty
 bool TreeStack::isEmpty(){
   if(top==NULL){
     return true;
