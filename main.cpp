@@ -27,7 +27,7 @@ int main(){
   //Initialize variables
   Stack* stack = new Stack();
   Queue* queue = new Queue();
-  char input[30];
+  char input[60];
   char notation[15];
   char infixT[] = "infix";
   char postfixT[] = "postfix";
@@ -37,7 +37,7 @@ int main(){
 
   //Ask the user for an input using infix notation
   cout << "Please enter a mathematical expression in infix notation (make sure to include a space between each token):" << endl;
-  cin.get(input, 30);
+  cin.get(input, 60);
   cin.get();
 
   //Check that the user put spaces between tokens
@@ -73,6 +73,7 @@ int main(){
 	stack->pop();
       }
       stack->pop();
+      prev=precedence(stack->peek());
     }
     else { //For all five operators
       now=precedence(input[i]);
@@ -103,7 +104,8 @@ int main(){
   TreeStack* treeStack = new TreeStack();
   TreeNode* root = new TreeNode('\0');
   char* postfixChar = queue->returnPostfix();
-
+  cout << postfixChar << endl;
+  
   //Go through the postfix expression
   //Referenced from Techie Delight
   //https://www.techiedelight.com/expression-tree/
