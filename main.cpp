@@ -104,7 +104,6 @@ int main(){
   TreeStack* treeStack = new TreeStack();
   TreeNode* root = new TreeNode('\0');
   char* postfixChar = queue->returnPostfix();
-  cout << postfixChar << endl;
   
   //Go through the postfix expression
   //Referenced from Techie Delight
