@@ -48,16 +48,6 @@ int main(){
     }
   }
 
-  //Ask what type of notation the user would like to print out
-  cout << "What notation would you like to translate to (infix, prefix, or postfix)?" << endl;
-  cin.get(notation, 15);
-  cin.get();
-
-  //Allow both upper and lower case input
-  for(int i=0; i < strlen(notation); i++) {
-    notation[i] = tolower(notation[i]);
-  }
-
   //Turn the infix input into postfix
   for(int i=0; i<strlen(input); i=i+2){
     if(isOperator(input[i])==false && input[i]!='(' && input[i]!=')'){
@@ -104,6 +94,19 @@ int main(){
   TreeStack* treeStack = new TreeStack();
   TreeNode* root = new TreeNode('\0');
   char* postfixChar = queue->returnPostfix();
+
+  cout << "Postfix expression:" << endl;
+  cout << postfixChar << endl;
+  
+  //Ask what type of notation the user would like to print out
+  cout << "What notation would you like to translate to (infix, prefix, or postfix)?" << endl;
+  cin.get(notation, 15);
+  cin.get();
+
+  //Allow both upper and lower case input
+  for(int i=0; i < strlen(notation); i++) {
+    notation[i] = tolower(notation[i]);
+  }
   
   //Go through the postfix expression
   //Referenced from Techie Delight
